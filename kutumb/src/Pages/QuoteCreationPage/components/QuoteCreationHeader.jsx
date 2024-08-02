@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../../../Styles/globalStyle.css"
-export const QutoesPageHeader = ()=>{
+export const QutoesCreationHeader = ()=>{
     const navigate = useNavigate();
     return (<>
       <div className="header">
@@ -11,9 +11,9 @@ export const QutoesPageHeader = ()=>{
             height: "65%",
             margin: "0.6% 0 0 1%"
           }}
-          onClick={()=>navigate("/quoteCreation")}
+          onClick={()=>navigate(-1)}
         >
-          Create Quotes +
+          {"<-Back"}
         </div>
       </div>
       <div></div>

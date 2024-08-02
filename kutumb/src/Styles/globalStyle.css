@@ -13,14 +13,16 @@ input::placeholder {
 }
 .primary-btn {
   color: white;
-  background-color: rgb(8, 43, 241, 1);
+  background-color: #007bff;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: grey 3px 2px 7px;
   border-radius: 10px;
+}
+.primary-btn:hover {
+  background-color: #0056b3;
 }
 .header {
   background-color: black;

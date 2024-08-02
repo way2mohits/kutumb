@@ -1,9 +1,14 @@
 export const postData = async (url = '', data = {}) =>{
+    const token = localStorage.getItem("token");
+    let header = {
+        'Content-Type': 'application/json'
+    }
+    if(token!=null){
+        header={...header,'Authorization': token}
+    }
     const response = await fetch(url, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: header,
         body: JSON.stringify(data)
     });
     if(response.status!=200){

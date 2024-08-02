@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import "../../../Styles/quoteCreation.css"
+import "../../../Styles/globalStyle.css"
 import { postData, uploadImage } from '../../../network/apiFunctions';
 import { useNavigate } from 'react-router-dom';
 
 export const QuoteCreationModal = () => {
     const [quoteText, setQuoteText] = useState('');
     const [imageFile, setImageFile] = useState(null);
+    const [isLoading,setIsLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleImageUpload = async () => {
@@ -22,9 +24,10 @@ export const QuoteCreationModal = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+        setIsLoading(true);
         if (imageFile === null) {
             alert('Image is still uploading. Please wait.');
+            setIsLoading(false);
             return;
         }
         let mediaUrl = ""
@@ -39,20 +42,22 @@ export const QuoteCreationModal = () => {
 
         try {
             const response = await postData('https://assignment.stage.crafto.app/postQuote', quoteData);
+            setIsLoading(false);
             if(response==="Error"){
                 alert("Error While Creating Quote!!!")
                 return;
             }
             alert("Quote Created Successfully!!");
             navigate(-1);
-            console.log('Quote created:', response);
         } catch (error) {
+            setIsLoading(false);
             console.error('Error creating quote:', error);
         }
     };
 
     return (
         <>
+        {isLoading && <div className="modal">Loading....</div>}
             <img
                 src="/assets/loginPage.jpg"
                 style={{ height: "100%", width: "100%" }}

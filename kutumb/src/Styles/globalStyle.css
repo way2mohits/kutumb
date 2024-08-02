@@ -1,0 +1,39 @@
+input {
+  height: 2rem;
+  border-radius: 10px;
+  background: lightgray;
+  width: 80%;
+  margin: 2%;
+  text-align: center;
+}
+input::placeholder {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+.primary-btn {
+  color: white;
+  background-color: rgb(8, 43, 241, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: grey 3px 2px 7px;
+  border-radius: 10px;
+}
+.header {
+  background-color: black;
+  height: 9%;
+  position: fixed;
+  width: 100%;
+  z-index:1000;
+}
+.top-right-floating {
+  position: fixed;
+  right: 2%;
+  top: 1%;
+  height: 2%;
+  padding: 1%;
+  width: 100%;
+}

@@ -1,0 +1,9 @@
+.authModalContainer{
+    height: 50%;
+    width: 25%;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    border-radius: 10px;
+}

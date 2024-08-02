@@ -17,7 +17,7 @@ export const postData = async (url = '', data = {}) =>{
     return  response.json();
 }
 
-export async function fetchData(url) {
+export const fetchData = async(url) =>{
     try {
         const response = await fetch(url, {
             method: 'GET',
@@ -34,4 +34,12 @@ export async function fetchData(url) {
     } catch (error) {
         console.error('Error:', error);
     }
+}
+
+export const uploadImage = async(url,formData) =>{
+    const response = await fetch(url, {
+        method: 'POST',
+        body: formData
+    });
+    return response.json();
 }

@@ -29,7 +29,7 @@ input::placeholder {
   height: 9%;
   position: fixed;
   width: 100%;
-  z-index:1000;
+  z-index: 1000;
 }
 .top-right-floating {
   position: fixed;
@@ -38,4 +38,37 @@ input::placeholder {
   height: 2%;
   padding: 1%;
   width: 100%;
+}
+.disabled-btn {
+  background-color: grey;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.modal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 5;
+  background-color: black;
+  color: white;
+  opacity: 0.5;
+  font-size: 5rem;
+  font-weight: bold;
+}
+.no-result-modal {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
 }

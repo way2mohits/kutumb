@@ -16,7 +16,7 @@ export const AuthModal = ()=>{
             return;
         }
         localStorage.setItem("token",response.token);
-        navigate("/")
+        navigate("/quotesPage")
     }
     return <>
         <div className="authModalContainer">
